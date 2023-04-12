@@ -13,6 +13,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App/>,
   },
+  {
+    path: "/search/searchQuery",
+    element: <App/>, 
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
