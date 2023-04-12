@@ -4,14 +4,14 @@ import './app.scss';
 import Navbar from './components/Navbar';
 import { AiOutlineSearch,AiOutlineClose } from 'react-icons/ai';
 import { faker } from '@faker-js/faker';
-import { Link } from 'react-router-dom';
+import { Link, redirect ,useNavigate} from 'react-router-dom'; 
 
 function App() {
 
   const [isSuggest,setIsSuggest]=useState("")
   const [searchedText,setSearchedText]=useState("")
-  const [suggestedData,setSuggestedData]=useState([])
-
+  const [suggestedData,setSuggestedData]=useState([]) 
+  const navigate = useNavigate();
   const createData = () => {
     return {
       name: faker.commerce.productName(),
@@ -37,6 +37,11 @@ function App() {
     "Leather dresses",
     "Solid tshirts",
    ]
+
+    const handleSearch=()=>{
+      navigate(`/search/${searchedText}`)
+    }
+
    
    
   return (
@@ -45,7 +50,16 @@ function App() {
          {/* Search Bar */}
          <div className='search_bar_container'>
               <div className='input_container'>
-                <input className='search_input' value={searchedText} placeholder='Search' onChange={(e)=>setSearchedText(e.target.value)} onFocus={()=> setIsSuggest(true)}   />
+                <input 
+                className='search_input' value={searchedText} 
+                placeholder='Search' 
+                onChange={(e)=>setSearchedText(e.target.value)} 
+                onFocus={()=> setIsSuggest(true)} 
+                onKeyPress = {
+                  (e) => e.key === 'Enter' && handleSearch() 
+                }
+                
+                />
                 <div> <AiOutlineSearch  style={{fontSize:'1.8rem'}}/> </div>
               </div>
          </div> 
@@ -63,10 +77,11 @@ function App() {
                    <div className='small_cards_container'>
                     {
                       suggestedData.map((data,index)=>{
-                        return <div className='small_card' key={index+100}>
-                                <img src={data.image} alt='product ' />
-                                <p className='product_name'>{data.name}</p>
-                        </div>
+                        return   <div className='small_card' key={index+100}>
+                                    <img src={data.image} alt='product ' />
+                                    <p className='product_name'>{data.name}</p>
+                                </div>
+                           
                       })
                     }
                    </div>

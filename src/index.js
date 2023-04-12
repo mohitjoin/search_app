@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './index.css';
 import App from './App';
+import Search from './components/Search/Search';
 import reportWebVitals from './reportWebVitals';
 
 const router = createBrowserRouter([
@@ -14,8 +15,8 @@ const router = createBrowserRouter([
     element: <App/>,
   },
   {
-    path: "/search/searchQuery",
-    element: <App/>, 
+    path: "/search/:searchQuery",
+    element: <Search/>, 
   },
 ]);
 
