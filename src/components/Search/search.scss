@@ -1,0 +1,84 @@
+.search_page_container{
+    width: 100%;
+}
+.product_container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    .product_filters{
+        width: 20%;
+        padding: 12px;
+    }
+    .products_listing{
+        width: 80%;
+        .search_cards_container{
+            display: flex;
+            flex-wrap: wrap;
+            .search_card{
+                width: 220px;
+                height: 300px;
+                margin: auto;
+                margin-bottom: 100px;
+
+                .wish_list_icon{
+                    position: absolute;
+                    margin-top: -305px;
+                    width: 220px;
+                    .wishlist_icon{
+                        width: 40px;
+                        height: 40px; 
+                        color:white;
+                        margin: auto;
+                        margin-right: 4px;
+                    }
+                }
+                .view_product_icon{
+                    height: 40px;
+                    text-align: center;
+                    background-color: #6D84FF;
+                    position: absolute;
+                    margin-top: -50px;
+                    width: 220px;
+                    color: white;
+                    padding-top:12px ;
+                    font-size: 1.2rem;
+                    font-weight: 600; 
+                }
+                
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+                .product_name_search{
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    margin: 0px;
+                    padding: 6px 2px;
+                }
+                .product_name_price{
+                    font-size: 1.2rem;
+                    display: flex;
+                    flex-direction: row;
+                    // height: 12px;
+                    margin: 0px;
+                    .final_price{
+                        padding-left: 12px;
+                        font-size: 1.25rem;
+                        font-weight: 800;
+                        color: #6D84FF;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.cutted_text{
+    text-decoration-line: line-through;
+}
+.view_product_icon {
+    // display: none;
+    cursor: pointer;
+}
+ 

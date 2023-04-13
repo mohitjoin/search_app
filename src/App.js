@@ -15,7 +15,7 @@ function App() {
   const createData = () => {
     return {
       name: faker.commerce.productName(),
-      image:faker.image.fashion() 
+      image:faker.image.fashion(640,480,true) 
 
     };
   };
@@ -39,7 +39,8 @@ function App() {
    ]
 
     const handleSearch=()=>{
-      navigate(`/search/${searchedText}`)
+      if(searchedText!=="")
+        navigate(`/search/${searchedText}`)
     }
 
    

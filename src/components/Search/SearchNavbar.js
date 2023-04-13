@@ -16,20 +16,17 @@ const SearchNavbar=()=>{
 
     return (
         <div className='navbar_container' >
-            <div className='input_container'>
+            <div className='input_container_search'>
                 <input 
                 className='search_input' 
                 value={searchedText} 
                 placeholder='Search' 
                 onChange={(e)=>{
-                    
                       setSearchedText(e.target.value)
                 }} 
-                 
                 onKeyPress = {
                   (e) => e.key === 'Enter' && handleSearch() 
                 }
-                
                 />
                 <div> <AiOutlineSearch  style={{fontSize:'1.8rem'}}/> </div>
               </div>
